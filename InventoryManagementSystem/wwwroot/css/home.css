@@ -1,0 +1,143 @@
+﻿body {
+    background-color: #f2f2f2;
+    background-repeat: no-repeat;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    font-style: normal;
+    font-weight: 200;
+    padding: 0px;
+    background-image: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80");
+}
+
+
+/* Home Page */
+.titular .tagline {
+    font-size: 120px;
+    color: #FFF;
+    font-family: Times New Roman;
+    position: absolute;
+    margin-top: 200px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: effect 2s linear infinite;
+    text-shadow: 1px 1px 4px #000000;
+}
+
+@keyframes effect {
+    0% {
+        color: #FFF;
+        -webkit-background-clip: border-box;
+    }
+
+    100% {
+        color: rgb(0,255,132);
+        -webkit-background-clip: text;
+    }
+}
+
+.titular .subtitle {
+    font-size: 25px;
+    color: #FFFFFF;
+    font-family: Bahnschrift;
+    position: absolute;
+    margin-top: 210px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 1px 1px 4px #000000;
+}
+
+.titular .btntop {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: Bahnschrift;
+    color: #FFF;
+    border: 3px solid red;
+    border-radius: 5px;
+    position: absolute;
+    top: 8%;
+    right: 1%;
+    transform: translate(-50%, -50%);
+    padding: 8px 25px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+
+    .titular .btntop:hover {
+        background-color: rgb(0,35,51);
+        color: rgb(0,35,51);
+        cursor: pointer;
+    }
+
+.titular .btn {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: Bahnschrift;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    position: absolute;
+    margin-top: 450px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px 25px;
+    cursor: pointer;
+    background-color: rgb(0,35,51);
+}
+
+.titular .bg {
+    width: fit-content;
+    height: 700px;
+    opacity: 100%;
+}
+
+
+
+
+
+@media screen and (max-width: 2000px) {
+    .titular .tagline {
+        font-size: 45px;
+        top: 30%;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .titular .tagline {
+        font-size: 43px;
+        top: 10%;
+    }
+
+    .titular .subtitle {
+        font-size: 23px;
+        top: 15%;
+    }
+
+    .context h1 {
+        margin-top: 0;
+    }
+
+    .context .line {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .titular .tagline {
+        font-size: 30px;
+        top: 8%;
+    }
+
+    .titular .subtitle {
+        font-size: 18px;
+        top: 16%;
+    }
+
+    .titular .btn {
+        margin-top: 330px;
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+}

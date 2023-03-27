@@ -1,0 +1,74 @@
+﻿@model InventoryManagementSystem.Models.Inventory
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<body style="background-color:#C0C0C0;">
+    <nav class="navbar navbar-light bg-dark">
+    <span class="navbar-brand mb-0 h1"  style="margin-left:40px;"> <a asp-action="Index" asp-controller="Inventory" style="color:white; text-decoration:none;">Inventory</a></span>
+    </nav>
+    <br/>
+    <h1 align="center">Edit Inventory Item</h1>
+    <hr/>
+
+    
+  <div class="row" style="margin-left:400px;" >
+    <div class="col-md-7">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="InvontaryId" />
+             <br/>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label" style ="font-weight:bold;">Name</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+             <br/>
+            <div class="form-group">
+                <label asp-for="AvailableUnit" class="control-label" style ="font-weight:bold;">Available Unit</label>
+                <input asp-for="AvailableUnit" class="form-control"  />
+                <span asp-validation-for="AvailableUnit" class="text-danger"></span>
+            </div>
+             <br/>
+            <div class="form-group">
+                <label asp-for="ReorderLevel" class="control-label" style ="font-weight:bold;">Re-Order Level</label>
+                <input asp-for="ReorderLevel" class="form-control" />
+                <span asp-validation-for="ReorderLevel" class="text-danger"></span>
+            </div>
+             <br/>
+            <div class="form-group">
+                <label asp-for="UnitPrice" class="control-label" style ="font-weight:bold;">Unit Price</label>
+                <input asp-for="UnitPrice" class="form-control" />
+                <span asp-validation-for="UnitPrice" class="text-danger"></span>
+            </div>
+             <br/> <br/>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                 <button  class="btn btn-success" style="margin-left:350px;">
+                <a asp-action="Index" style="color:white; text-decoration:none;">Back to List</a>
+                </button>
+            </div>
+            <br/>
+
+        </form>
+    </div>
+</div>
+
+<br/><br/>
+
+<footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; Your Website</small>
+    </div>
+  </footer>
+</body>
+   
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

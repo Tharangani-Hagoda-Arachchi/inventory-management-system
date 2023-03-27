@@ -1,0 +1,81 @@
+﻿@model IEnumerable<InventoryManagementSystem.Models.Inventory>
+
+@{
+    ViewData["Title"] = "Index";
+
+    Pager pager = new Pager();
+    int pageNo = 0;
+    if (ViewBag.Pager != null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
+}
+
+<body style="background-color:#E6E6FA;">
+<nav class="navbar navbar-light bg-dark">
+  <span class="navbar-brand mb-0 h1"  style="margin-left:40px;"> <a asp-action="Index" style="color:white; text-decoration:none;">Inventory</a></span>
+  <span class="navbar-brand mb-0 h1"  style="margin-left:40px; float:right;"> <a asp-action="Index" asp-controller="Home" style="color:white; text-decoration:none;">Logout</a></span>
+</nav>
+ <br/>
+
+<h1 align="center">Inventory Items</h1>
+<hr />
+
+<p>
+    <button class="btn btn-primary" style="margin-left:100px;  float:left;">
+         <a asp-action="Create" style="color:white; text-decoration:none;">Create New</a>
+    </button>
+   
+</p>
+<partial name="_Pager" model="@pager" style="margin-right:100px; float:right" />
+<table  class="table table-striped" style="margin-left:100px; margin-right:100px; width:1200px;" >
+    <thead>
+        <tr>
+            <th>  Id </th>
+            <th> Name </th>
+            <th> Availabale Units </th>
+            <th> Re- Order Level </th>
+            <th> Unit Price  </th>
+            <th>Actions</th>
+            <th>Actions</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody >
+@foreach (var item in Model) {
+        <tr>
+             <td>
+                @Html.DisplayFor(modelItem => item.InvontaryId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AvailableUnit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReorderLevel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitPrice)
+            </td>
+            <td>
+                <button class="btn btn-success"><a asp-action="Edit" asp-route-id="@item.InvontaryId" style="color:white; text-decoration:none;">Edit</a></button>
+            </td>
+             <td>
+                <button class="btn btn-warning">
+                    <a asp-action="Detail" asp-route-id="@item.InvontaryId" style="color:white; text-decoration:none;">Details</a>
+                 </button>
+            <td>
+                <button class="btn btn-danger"><a asp-action="Delete" asp-route-id="@item.InvontaryId" style="color:white; text-decoration:none;">Delete</a></button>
+            </td>
+                
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+<partial name="_Pager" model="@pager" />
+
+

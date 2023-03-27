@@ -1,0 +1,67 @@
+﻿@model InventoryManagementSystem.Models.Inventory
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<body style="background-color:#C0C0C0;">
+    <nav class="navbar navbar-light bg-dark">
+      <span class="navbar-brand mb-0 h1"  style="margin-left:40px;"> <a asp-action="Index" asp-controller="Inventory" style="color:white; text-decoration:none;">Inventory</a></span>
+    </nav>
+    <br/>
+    <h1 align="center"> Inventory Item Details</h1>
+   <br/><br/>
+
+    <div class="card" style="width:700px; margin-left:400px;" >
+      <div class="card-body">
+      <div>
+    
+     <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Name
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt class = "col-sm-2">
+         Units
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AvailableUnit)
+        </dd>
+        
+        <dt class = "col-sm-2">
+             Level
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ReorderLevel)
+        </dd>
+          
+        <dt class = "col-sm-2">
+            Price
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UnitPrice)
+        </dd>
+         
+    </dl>
+</div>
+
+
+<div class="form-group">
+   <button class="btn btn-primary"> <a asp-action="Edit" asp-route-id="@Model?.InvontaryId" style="color:white; text-decoration:none;">Edit</a> </button>
+   <button class="btn btn-success" style="margin-left:350px"> <a asp-action="Index" style="color:white; text-decoration:none;">Back to List</a></button
+</div>
+
+    </div>
+  </div>
+</div>
+<br/><br/><br/><br/><br/><br/><br/>
+<footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; Your Website</small>
+    </div>
+  </footer>
+</body>
